@@ -23,9 +23,11 @@ module.exports = {
         extensions: [".ts", ".js"],
     },
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        port: 5000,
-        watchContentBase: true,
+        static: {
+            directory: path.join(__dirname, "dist"),
+        },
+        port: 5555,
+        hot: true,
     },
 
     devtool: "inline-source-map",
